@@ -7,7 +7,7 @@
     <style>
         /* Genel sayfa ayarları */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -23,61 +23,59 @@
         .container {
             text-align: center;
             width: 100%;
-            max-width: 400px;
+            max-width: 360px;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Geçiş efekti */
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .container:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Hover efekti */
+            transform: scale(1.03);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
         /* Başlık ayarları (degrade renk) */
         h1 {
             font-size: 1.8em;
             font-weight: bold;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #ff512f, #dd2476); /* Degrade renk */
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #ff512f, #dd2476);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         /* Giriş alanı ayarları */
         input {
-            width: 90%;
-            max-width: 350px;
-            padding: 12px;
+            width: 100%;
+            padding: 15px;
             margin: 15px 0;
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
             font-size: 1em;
             transition: box-shadow 0.3s ease;
         }
         input:focus {
-            box-shadow: 0 0 8px rgba(0, 150, 255, 0.5); /* Mavi odaklanma efekti */
+            box-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
             outline: none;
         }
 
         /* Buton ayarları */
         button {
-            padding: 12px 20px;
-            background-color: #4CAF50; /* Yeşil buton */
+            padding: 15px;
+            background-color: #4CAF50;
             color: #fff;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 1.1em;
             font-weight: bold;
             cursor: pointer;
-            width: 90%;
-            max-width: 350px;
+            width: 100%;
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
         }
         button:hover {
-            background-color: #45a049; /* Hover için koyu yeşil */
+            background-color: #45a049;
             transform: translateY(-3px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
@@ -89,7 +87,7 @@
             color: #333;
             font-weight: bold;
             animation: fadeIn 1s ease;
-            word-break: break-word; /* Uzun metinler için kelime kırma */
+            word-break: break-word;
         }
 
         /* Sonuç için animasyon tanımı */
@@ -98,16 +96,13 @@
             to { opacity: 1; }
         }
 
-        /* Mobil ekranlar için daha iyi görünüm ayarı */
+        /* Mobil ekranlar için optimize edilmiş görünüm */
         @media (max-width: 480px) {
             h1 {
                 font-size: 1.5em;
             }
             input, button {
                 font-size: 1em;
-            }
-            .container {
-                padding: 20px;
             }
         }
     </style>
@@ -121,13 +116,10 @@
     </div>
 
     <script>
-        // Kullanıcının ID'sini kontrol eden fonksiyon
         function checkWinner() {
-            // Kullanıcı ID'sini büyük harfe çevir ve "TR" varsa kaldır
             let userID = document.getElementById("userID").value.trim().toUpperCase().replace(/^TR/i, '');
             const resultDiv = document.getElementById("result");
 
-            // Kazananlar listesi
             const winners = {
                 "WX626264": "HUAWEI WATCH GT 4 (41mm)",
                 "WX1195429": "HUAWEI WATCH GT 4 (41mm)",
@@ -213,12 +205,7 @@
                 "WX1296190": "150₺"
             };
 
-            // ID kontrolü ve sonuç gösterme
-            if (userID === "WX626264" || userID === "WX1195429") {
-                resultDiv.innerHTML = "🎉 Tebrikler, HUAWEI WATCH GT 4 (41mm) kazandınız!";
-            } else if (winners[userID] === "150₺") {
-                resultDiv.innerHTML = "🎉 Tebrikler, yarışmaya katılarak 150₺ kazandınız!";
-            } else if (winners[userID]) {
+            if (winners[userID]) {
                 resultDiv.innerHTML = `🎉 Tebrikler, ${winners[userID]} kazandınız!`;
             } else {
                 resultDiv.innerHTML = "😞 Maalesef bir şey kazanamadınız.";
