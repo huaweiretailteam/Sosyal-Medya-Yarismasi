@@ -12,10 +12,10 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             background-color: #FF9E42; /* Turuncu arka plan */
             margin: 0;
-            padding: 10px;
+            padding: 20px;
             box-sizing: border-box;
         }
 
@@ -24,15 +24,16 @@
             text-align: center;
             width: 100%;
             max-width: 360px;
-            padding: 20px;
+            padding: 25px;
             background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
         }
         .container:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         /* Başlık ayarları (degrade renk) */
@@ -48,26 +49,26 @@
         /* Giriş alanı ayarları */
         input {
             width: 100%;
-            padding: 15px;
-            margin: 15px 0;
+            padding: 12px;
+            margin: 10px 0;
             border: 1px solid #ddd;
-            border-radius: 10px;
+            border-radius: 8px;
             box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
             font-size: 1em;
             transition: box-shadow 0.3s ease;
         }
         input:focus {
-            box-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
+            box-shadow: 0 0 8px rgba(0, 150, 255, 0.5);
             outline: none;
         }
 
         /* Buton ayarları */
         button {
-            padding: 15px;
+            padding: 12px 20px;
             background-color: #4CAF50;
             color: #fff;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             font-size: 1.1em;
             font-weight: bold;
             cursor: pointer;
@@ -76,7 +77,7 @@
         }
         button:hover {
             background-color: #45a049;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
@@ -86,7 +87,7 @@
             font-size: 1.2em;
             color: #333;
             font-weight: bold;
-            animation: fadeIn 1s ease;
+            animation: fadeIn 0.5s ease;
             word-break: break-word;
         }
 
@@ -96,7 +97,7 @@
             to { opacity: 1; }
         }
 
-        /* Mobil ekranlar için optimize edilmiş görünüm */
+        /* Mobil ekranlar için daha iyi görünüm */
         @media (max-width: 480px) {
             h1 {
                 font-size: 1.5em;
@@ -104,13 +105,16 @@
             input, button {
                 font-size: 1em;
             }
+            .container {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Sosyal Medya Yarışması</h1>
-        <input type="text" id="userID" placeholder="Ne kazandığınızı öğrenmek için ID'nizi girin.">
+        <input type="text" id="userID" placeholder="Ne kazandığınızı öğrenmek için ID'nizi girin">
         <button onclick="checkWinner()">Sorgula</button>
         <div class="result" id="result"></div>
     </div>
@@ -127,82 +131,25 @@
                 "WX1100564": "HUAWEI FreeBuds 3",
                 "WX823104": "HUAWEI FreeBuds 3",
                 // 150₺ kazananlar
-                "WX1257302": "150₺",
-                "WX1257295": "150₺",
-                "WX1351049": "150₺",
-                "WX1332647": "150₺",
-                "WX1329244": "150₺",
-                "WX1357923": "150₺",
-                "WX1362327": "150₺",
-                "WX1343914": "150₺",
-                "WX1354809": "150₺",
-                "WX1179949": "150₺",
-                "WX1190378": "150₺",
-                "WX867715": "150₺",
-                "WX1286941": "150₺",
-                "WX1343911": "150₺",
-                "WX1257292": "150₺",
-                "WX1357929": "150₺",
-                "WX1259334": "150₺",
-                "WX1367303": "150₺",
-                "WX1343629": "150₺",
-                "WX1190040": "150₺",
-                "WX1296189": "150₺",
-                "WX1373686": "150₺",
-                "WX1232214": "150₺",
-                "WX1354810": "150₺",
-                "WX626481": "150₺",
-                "WX1344848": "150₺",
-                "WX1337827": "150₺",
-                "WX1198688": "150₺",
-                "WX1370695": "150₺",
-                "WX688132": "150₺",
-                "WX1329243": "150₺",
-                "WX1139679": "150₺",
-                "WX1286940": "150₺",
-                "WX1289940": "150₺",
-                "WX1348508": "150₺",
-                "WX1238894": "150₺",
-                "WX904115": "150₺",
-                "WX1181933": "150₺",
-                "WX1178063": "150₺",
-                "WX1296055": "150₺",
-                "WX1377986": "150₺",
-                "WX1369351": "150₺",
-                "WX1175639": "150₺",
-                "WX1357930": "150₺",
-                "WX1366592": "150₺",
-                "WX1297678": "150₺",
-                "WX918188": "150₺",
-                "WX1338417": "150₺",
-                "WX1305421": "150₺",
-                "WX1322765": "150₺",
-                "WX1369672": "150₺",
-                "WX1254144": "150₺",
-                "WX1365202": "150₺",
-                "WX1266225": "150₺",
-                "WX1349304": "150₺",
-                "WX1312468": "150₺",
-                "WX1329245": "150₺",
-                "WX1274059": "150₺",
-                "WX867741": "150₺",
-                "WX1351597": "150₺",
-                "WX626279": "150₺",
-                "WX1129110": "150₺",
-                "WX626462": "150₺",
-                "WX1351205": "150₺",
-                "WX850047": "150₺",
-                "WX626496": "150₺",
-                "WX1305420": "150₺",
-                "WX1291895": "150₺",
-                "WX1257303": "150₺",
-                "WX1318140": "150₺",
-                "WX1364166": "150₺",
-                "WX1345856": "150₺",
-                "WX1349303": "150₺",
-                "WX1182968": "150₺",
-                "WX1293386": "150₺",
-                "WX1296190": "150₺"
+                "WX1257302": "150₺", "WX1257295": "150₺", "WX1351049": "150₺", "WX1332647": "150₺", 
+                "WX1329244": "150₺", "WX1357923": "150₺", "WX1362327": "150₺", "WX1343914": "150₺", 
+                "WX1354809": "150₺", "WX1179949": "150₺", "WX1190378": "150₺", "WX867715": "150₺", 
+                "WX1286941": "150₺", "WX1343911": "150₺", "WX1257292": "150₺", "WX1357929": "150₺", 
+                "WX1259334": "150₺", "WX1367303": "150₺", "WX1343629": "150₺", "WX1190040": "150₺", 
+                "WX1296189": "150₺", "WX1373686": "150₺", "WX1232214": "150₺", "WX1354810": "150₺", 
+                "WX626481": "150₺", "WX1344848": "150₺", "WX1337827": "150₺", "WX1198688": "150₺", 
+                "WX1370695": "150₺", "WX688132": "150₺", "WX1329243": "150₺", "WX1139679": "150₺", 
+                "WX1286940": "150₺", "WX1289940": "150₺", "WX1348508": "150₺", "WX1238894": "150₺", 
+                "WX904115": "150₺", "WX1181933": "150₺", "WX1178063": "150₺", "WX1296055": "150₺", 
+                "WX1377986": "150₺", "WX1369351": "150₺", "WX1175639": "150₺", "WX1357930": "150₺", 
+                "WX1366592": "150₺", "WX1297678": "150₺", "WX918188": "150₺", "WX1338417": "150₺", 
+                "WX1305421": "150₺", "WX1322765": "150₺", "WX1369672": "150₺", "WX1254144": "150₺", 
+                "WX1365202": "150₺", "WX1266225": "150₺", "WX1349304": "150₺", "WX1312468": "150₺", 
+                "WX1329245": "150₺", "WX1274059": "150₺", "WX867741": "150₺", "WX1351597": "150₺", 
+                "WX626279": "150₺", "WX1129110": "150₺", "WX626462": "150₺", "WX1351205": "150₺", 
+                "WX850047": "150₺", "WX626496": "150₺", "WX1305420": "150₺", "WX1291895": "150₺", 
+                "WX1257303": "150₺", "WX1318140": "150₺", "WX1364166": "150₺", "WX1345856": "150₺", 
+                "WX1349303": "150₺", "WX1182968": "150₺", "WX1293386": "150₺", "WX1296190": "150₺"
             };
 
             if (winners[userID]) {
