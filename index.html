@@ -15,13 +15,16 @@
             height: 100vh;
             background-color: #FF9E42; /* Turuncu arka plan */
             margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
         }
 
         /* Kapsayıcı kutu ayarları */
         .container {
             text-align: center;
+            width: 100%;
             max-width: 400px;
-            padding: 30px;
+            padding: 20px;
             background-color: rgba(255, 255, 255, 0.95);
             border-radius: 12px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
@@ -29,12 +32,12 @@
         }
         .container:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Kapsayıcı kutuya hover efekti ile gölge */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Hover efekti */
         }
 
         /* Başlık ayarları (degrade renk) */
         h1 {
-            font-size: 2em;
+            font-size: 1.8em;
             font-weight: bold;
             margin-bottom: 20px;
             background: linear-gradient(to right, #ff512f, #dd2476); /* Degrade renk */
@@ -45,6 +48,7 @@
         /* Giriş alanı ayarları */
         input {
             width: 90%;
+            max-width: 350px;
             padding: 12px;
             margin: 15px 0;
             border: 1px solid #ddd;
@@ -54,25 +58,27 @@
             transition: box-shadow 0.3s ease;
         }
         input:focus {
-            box-shadow: 0 0 8px rgba(0, 150, 255, 0.5); /* Odaklanma efektinde mavi gölge */
+            box-shadow: 0 0 8px rgba(0, 150, 255, 0.5); /* Mavi odaklanma efekti */
             outline: none;
         }
 
         /* Buton ayarları */
         button {
-            padding: 12px 25px;
+            padding: 12px 20px;
             background-color: #4CAF50; /* Yeşil buton */
             color: #fff;
             border: none;
             border-radius: 8px;
-            font-size: 1em;
+            font-size: 1.1em;
             font-weight: bold;
             cursor: pointer;
+            width: 90%;
+            max-width: 350px;
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
         }
         button:hover {
             background-color: #45a049; /* Hover için koyu yeşil */
-            transform: translateY(-3px); /* Hover efekti ile yukarı kaldırma */
+            transform: translateY(-3px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
@@ -82,13 +88,27 @@
             font-size: 1.2em;
             color: #333;
             font-weight: bold;
-            animation: fadeIn 1s ease; /* Sonuç kısmı için yumuşak animasyon */
+            animation: fadeIn 1s ease;
+            word-break: break-word; /* Uzun metinler için kelime kırma */
         }
 
         /* Sonuç için animasyon tanımı */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
+        }
+
+        /* Mobil ekranlar için daha iyi görünüm ayarı */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            input, button {
+                font-size: 1em;
+            }
+            .container {
+                padding: 20px;
+            }
         }
     </style>
 </head>
