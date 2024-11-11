@@ -128,6 +128,12 @@
             let userID = document.getElementById("userID").value.trim().toUpperCase().replace(/^TR/i, '');
             const resultDiv = document.getElementById("result");
 
+            // Özel durumlar
+            if (userID === "GÜNEŞ" || userID === "TOM") {
+                resultDiv.innerHTML = "Aman çocuğuma";
+                return;
+            }
+
             const winners = {
                 "WX626264": "HUAWEI WATCH GT 4 (41mm)",
                 "WX1195429": "HUAWEI WATCH GT 4 (41mm)",
